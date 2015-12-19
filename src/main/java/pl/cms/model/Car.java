@@ -1,6 +1,8 @@
 package pl.cms.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Judytka on 2015-12-19.
@@ -22,19 +24,25 @@ public class Car {
     @Column(name = "stanLicznikaSamochodu")
     private int kmCounter;
 
-    @ManyToOne
-    @JoinColumn(name = "WlascicielSamochodu")
-    private User carOwners;
+    @OneToMany
+    @JoinColumn(name = "wlascicielSamochoduId")
+    private List<User> carOwnerslist;
 
 
-
-//    private Exchange exchange;
+//    private List<Exchange> exchangeList;
 //
 //
-//    private Refueling refueling;
+//    private List<Refueling> refuelingList;
+
 
     public Car() {
+       this.carOwnerslist = new ArrayList<User>();
     }
+
+    public Integer getId() {
+        return id;
+    }
+
 
     public String getCarName() {
         return carName;
@@ -60,30 +68,29 @@ public class Car {
         this.kmCounter = kmCounter;
     }
 
-    public User getCarOwners() {
-        return carOwners;
+    public List<User> getCarOwnerslist() {
+        return carOwnerslist;
     }
 
-    public void setCarOwners(User carOwners) {
-        this.carOwners = carOwners;
+    public void setCarOwnerslist(List<User> carOwnerslist) {
+        this.carOwnerslist = carOwnerslist;
     }
 
-//    public Exchange getExchange() {
-//        return exchange;
+//    public List<Exchange> getExchangeList() {
+//        return exchangeList;
 //    }
 //
-//    public void setExchange(Exchange exchange) {
-//        this.exchange = exchange;
+//    public void setExchangeList(List<Exchange> exchangeList) {
+//        this.exchangeList = exchangeList;
 //    }
 //
-//    public Refueling getRefueling() {
-//        return refueling;
+//    public List<Refueling> getRefuelingList() {
+//        return refuelingList;
 //    }
 //
-//    public void setRefueling(Refueling refueling) {
-//        this.refueling = refueling;
+//    public void setRefuelingList(List<Refueling> refuelingList) {
+//        this.refuelingList = refuelingList;
 //    }
-
 
     @Override
     public String toString() {
@@ -92,7 +99,7 @@ public class Car {
                 ", carName='" + carName + '\'' +
                 ", carNumber=" + carNumber +
                 ", kmCounter=" + kmCounter +
-                ", carOwners=" + carOwners +
+                ", carOwnerslist=" + carOwnerslist +
                 '}';
     }
 }

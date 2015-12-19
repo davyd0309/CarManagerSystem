@@ -30,11 +30,16 @@ public class TestController {
 
         Car car = new Car();
         User user = new User("Konrad","Dawydiuk");
+        User user1 = new User("Tomasz","Marzec");
+
         userService.saveUser(user);
+        userService.saveUser(user1);
 
         car.setCarName("Moj samochod");
         car.setCarNumber(548556);
-        car.setCarOwners(user);
+        car.getCarOwnerslist().add(user);
+        car.getCarOwnerslist().add(user1);
+
 
         carService.saveCar(car);
 
