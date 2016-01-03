@@ -4,13 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Konrad on 2015-12-19.
  */
 @Entity
 @Table(name = "Wlasciciele")
-public class UserBD {
+public class UserBD implements Serializable{
 
 
 
@@ -29,6 +32,11 @@ public class UserBD {
     @Setter
     @Getter
     private String lastName;
+
+    @ManyToMany(mappedBy = "carOwnersList")
+    @Setter
+    @Getter
+    private List<CarBD> carList = new ArrayList<>();
 
     public UserBD() {
     }

@@ -4,15 +4,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Konrad on 2015-12-19.
  */
 @Entity
 @Table(name = "Samochody")
-public class CarBD {
+public class CarBD implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,18 +31,22 @@ public class CarBD {
     @Column(name = "numerSamochodu")
     @Setter
     @Getter
-    private int carNumber;
+    private String carNumber;
 
     @Column(name = "stanLicznikaSamochodu")
     @Setter
     @Getter
     private int kmCounter;
 
-    @OneToMany
-    @JoinColumn(name = "wlascicielSamochoduId")
+    @ManyToMany
+    @JoinTable(
+            name = "samochody_wlasciciele",
+            joinColumns = {@JoinColumn(name = "id_samochodu")},
+            inverseJoinColumns = {@JoinColumn(name = "id_wlasciciela")}
+    )
     @Setter
     @Getter
-    private List<UserBD> carOwnerslist;
+    private List<UserBD> carOwnersList = new ArrayList<>();
 
     @OneToMany(mappedBy = "carBDId")
     @Setter
@@ -62,7 +69,7 @@ public class CarBD {
                 ", carName='" + carName + '\'' +
                 ", carNumber=" + carNumber +
                 ", kmCounter=" + kmCounter +
-                ", carOwnerslist=" + carOwnerslist +
+                ", carOwnersList=" + carOwnersList +
                 ", exchangeBDList=" + exchangeBDList +
                 ", refuelingBDList=" + refuelingBDList +
                 '}';

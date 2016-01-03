@@ -22,7 +22,7 @@ import java.util.List;
 
 
 /**
- * Created by Judytka on 2015-12-19.
+ * Created by Konrad on 2015-12-19.
  */
 @Controller
 public class TestController {
@@ -49,35 +49,55 @@ public class TestController {
 
 //        UserBD konrad = new UserBD("Konrad","Dawydiuk");
 //        UserBD judyta = new UserBD("Judyta","Dawydiuk");
-//
-//        userService.saveUser(konrad);
-//        userService.saveUser(judyta);
-//
-//
+//        UserBD michal = new UserBD("Michal","Pawlowski");
+//        UserBD marek = new UserBD("Marek","Kawalik");
+//        UserBD slawek = new UserBD("Slawek","Polak");
+//        userDao.save(konrad);
+//        userDao.save(judyta);
+//        userDao.save(marek);
+//        userDao.save(michal);
+//        userDao.save(slawek);
+
+
 //        CarBD opel = new CarBD();
 //        opel.setCarName("Opel Corsa");
-//        opel.setCarNumber(458442);
-//        List<UserBD> opelList = new ArrayList<>();
-//        opelList.add(konrad);
-//        opel.setCarOwnerslist(opelList);
-//        carService.saveCar(opel);
+//        opel.setCarNumber("LKS4548");
+//        opel.getCarOwnersList().add(userDao.findOne(2));
+//        opel.getCarOwnersList().add(userDao.findOne(3));
+//        carDao.save(opel);
+//
+//        CarBD seat = new CarBD();
+//        seat.setCarName("Seat Ibiza");
+//        seat.setCarNumber("LCH4457");
+//         seat.getCarOwnersList().add(userDao.findOne(1));
+//        seat.getCarOwnersList().add(userDao.findOne(2));
+//        carDao.save(seat);
+//
+//
+//        CarBD mazda = new CarBD();
+//        mazda.setCarName("Mazda");
+//        mazda.setCarNumber("LU23321");
+//        mazda.getCarOwnersList().add(userDao.findOne(4));
+//        mazda.getCarOwnersList().add(userDao.findOne(5));
+//        carDao.save(mazda);
 
-        CarBD seat = new CarBD();
-        seat.setCarName("Seat Ibiza");
-        seat.setCarNumber(1322210);
-        List<UserBD> seatList = new ArrayList<>();
-        seatList.add(userDao.findOne(1));
-        seatList.add(userDao.findOne(2));
-        seat.setCarOwnerslist(seatList);
-        carDao.save(seat);
+        CarBD mazda = new CarBD();
+        mazda.setCarName("Ferari");
+        mazda.setCarNumber("LKS77777");
+        mazda.getCarOwnersList().add(userDao.findOne(1));
+        mazda.getCarOwnersList().add(userDao.findOne(2));
+        mazda.getCarOwnersList().add(userDao.findOne(3));
+        mazda.getCarOwnersList().add(userDao.findOne(4));
+        mazda.getCarOwnersList().add(userDao.findOne(5));
 
-//        for (int i = 0; i < opel.getCarOwnerslist().size(); i++) {
-//            log.info("OPEL" + "---"+opel.getCarOwnerslist().get(i).getFirstName());
-//        }
+        carDao.save(mazda);
 
-//        for (int i = 0; i < seat.getCarOwnerslist().size(); i++) {
-//            log.info("SEAT" + "---"+seat.getCarOwnerslist().get(i).getFirstName());
-//        }
+        Iterable<CarBD> cars = carDao.findAll();
+        cars.forEach(car->System.out.println(car.getId() +" "+ car.getCarName() +" "+ car.getCarOwnersList().size()));
+
+
+
+
 
 //        ExchangeBD wymianaOpel1 = new ExchangeBD();
 //        wymianaOpel1.setCarBDId(opel);
