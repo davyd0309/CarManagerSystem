@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.cms.dao.CarDao;
-import pl.cms.model.Car;
+import pl.cms.model.CarBD;
+import pl.cms.model.CarBD;
 
 import java.util.List;
 
@@ -21,11 +22,11 @@ public class CarService {
     public CarService() {
     }
 
-    public void saveCar(Car car){
-        carDao.save(car);
+    public void saveCar(CarBD carBD){
+        carDao.save(carBD);
     }
 
-    public Iterable<Car> findAllCar(){
+    public Iterable<CarBD> findAllCar(){
         return carDao.findAll();
     }
 }
