@@ -158,10 +158,8 @@ wymianaSeat1.setExchangePlace(miejsce2);
         exchangeDao.save(wymianaSeat1);
 
 
-//        for(CarBD i: carService.findAllCar()) {
-//            response.append(i).append("<br>");
-//        }
 
-        return response.toString();
+
+        return "forward:/index.html";
     }
 }
