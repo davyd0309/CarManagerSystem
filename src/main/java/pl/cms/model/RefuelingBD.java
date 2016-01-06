@@ -30,10 +30,11 @@ public class RefuelingBD {
     @Column(name = "oplataZaTankowanie")
     private BigDecimal refuelingPrice;
 
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "miejsceId")
     @Setter
     @Getter
-    private Enum refuelingPlace;
+    private PlaceBD refuelingPlace;
 
     @ManyToOne
     @JoinColumn(name = "samochodId")

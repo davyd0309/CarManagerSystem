@@ -48,15 +48,7 @@ public class CarBD implements Serializable{
     @Getter
     private List<UserBD> carOwnersList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "carBDId")
-    @Setter
-    @Getter
-    private List<ExchangeBD> exchangeBDList;
 
-    @OneToMany(mappedBy = "carBDId")
-    @Setter
-    @Getter
-    private List<RefuelingBD> refuelingBDList;
 
 
     public CarBD() {
@@ -70,8 +62,7 @@ public class CarBD implements Serializable{
                 ", carNumber=" + carNumber +
                 ", kmCounter=" + kmCounter +
                 ", carOwnersList=" + carOwnersList +
-                ", exchangeBDList=" + exchangeBDList +
-                ", refuelingBDList=" + refuelingBDList +
+
                 '}';
     }
 }

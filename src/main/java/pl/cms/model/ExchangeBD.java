@@ -30,10 +30,11 @@ public class ExchangeBD {
     @Column(name = "opisWymiany")
     private String exchangeDescription;
 
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "miejsceId")
     @Setter
     @Getter
-    private Enum exchangePlace;
+    private PlaceBD exchangePlace;
 
 
     @ManyToOne
