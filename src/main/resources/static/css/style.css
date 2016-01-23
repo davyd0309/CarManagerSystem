@@ -1,0 +1,20 @@
+
+/*DIV*/
+div{
+    border:solid 1px black;
+}
+#divLogo{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 50px;
+}
+#divMain{
+    width: 90%;
+}
+
+/*BUTTON*/
+.buttonDiv{
+    width: 180px;
+    height: 40px;
+}

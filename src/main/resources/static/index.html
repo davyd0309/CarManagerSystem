@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="cmsAngularModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Manager System</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="divLogo">
+    CAR MANAGER SYSTEM
+</div>
+<br><br><br><br><br><br>
+
+<div id="divMain">
+    <div id="divButton" style="float: left;width: 20%">
+        <button id="ButtonLogin" class="buttonDiv" type="button" onclick="window.location.href='#/login'">Logowanie</button>
+        <br><br><br>
+        <button id="ButtonAddUser" class="buttonDiv" type="button" onclick="window.location.href='#/dodajUzytkownika'">Rejestracja użytkownika</button>
+
+    </div>
+    <div id="divTemplate" style="float: right;width: 70%" data-ng-view>
+
+
+
+    </div>
+
+</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.5/angular-route.min.js"></script>
+
+<script src="angular/module.js"></script>
+<script src="angular/route.js"></script>
+</html>
