@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,6 @@ import java.util.List;
 public class UserBD implements Serializable{
 
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter
@@ -26,11 +26,13 @@ public class UserBD implements Serializable{
     @Column(name = "imieWlasciciela")
     @Setter
     @Getter
+    @NotNull
     private String firstName;
 
     @Column(name = "nazwiskoWlasciciela")
     @Setter
     @Getter
+    @NotNull
     private String lastName;
 
     @ManyToMany(mappedBy = "carOwnersList")

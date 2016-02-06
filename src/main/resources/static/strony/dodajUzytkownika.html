@@ -1,1 +1,43 @@
-tu bede dodawał uzytkownika
+
+<div class="easyui-panel" title="New Topic" style="width:400px">
+    <div style="padding:10px 60px 20px 60px">
+        <form id="ff" class="easyui-form" >
+            <table cellpadding="5">
+                <tr>
+                    <td>Imie:</td>
+                    <td><input class="easyui-textbox" type="text" id="addFirstName" data-options="required:true"></input></td>
+                </tr>
+                <tr>
+                    <td>Nazwisko:</td>
+                    <td><input class="easyui-textbox" type="text" id="AddLastName" data-options="required:true"></input></td>
+                </tr>
+
+
+            </table>
+        </form>
+        <div style="text-align:center;padding:5px">
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">Submit</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">Clear</a>
+        </div>
+    </div>
+</div>
+<script>
+    function submitForm(){
+        $('#ff').form({
+            url:'/save',
+            onSubmit:function(){
+                // walidacja
+                // return false to prevent submit;
+            },
+            success:function(data){
+                //okno z info ze dodano poprawnie
+            }
+        });
+    }
+    function clearForm(){
+        $('#ff').form('clear');
+    }
+</script>
+
+

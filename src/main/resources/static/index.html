@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Car Manager System</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
 </head>
 <body>
 <div id="divLogo">
@@ -18,18 +20,46 @@
         <button id="ButtonAddUser" class="buttonDiv" type="button" onclick="window.location.href='#/dodajUzytkownika'">Rejestracja użytkownika</button>
 
     </div>
-    <div id="divTemplate" style="float: right;width: 70%" data-ng-view>
+    <div id="divTemplate" style="float: right;width: 70%" >
+
+        <div class="easyui-panel" title="New Topic" style="width:400px">
+            <div style="padding:10px 60px 20px 60px">
+                <form id="ff" class="easyui-form" method="post" >
+                    <table cellpadding="5">
+                        <tr>
+                            <td>Imie:</td>
+                            <td><input class="easyui-textbox" type="text" name="firstName" data-options="required:true"></input></td>
+                        </tr>
+                        <tr>
+                            <td>Nazwisko:</td>
+                            <td><input class="easyui-textbox" type="text" name="lastName" data-options="required:true"></input></td>
+                        </tr>
 
 
+                    </table>
+                </form>
+                <div style="text-align:center;padding:5px">
+
+                    <a id ="addUser" href="javascript:void(0)" class="easyui-linkbutton">Zapisz</a>
+                    <a id ="clearFieldsAddUser" href="javascript:void(0)" class="easyui-linkbutton">Czyść pola</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 
 </div>
+
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script src="https://code.angularjs.org/1.4.5/angular-route.min.js"></script>
-
 <script src="angular/module.js"></script>
 <script src="angular/route.js"></script>
+
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+
+<script type="text/javascript" src="JScript/java.js"></script>
 </html>

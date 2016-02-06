@@ -1,10 +1,7 @@
 package pl.cms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.cms.dto.UserDTO;
 import pl.cms.model.UserBD;
 import pl.cms.service.UserService;
@@ -21,12 +18,13 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public UserDTO saveUser(@RequestBody UserDTO userDto){
+    public void saveUser(@RequestParam String firstName,
+                         @RequestParam String lastName){
         UserBD userBd = new UserBD();
-        userBd.setFirstName(userDto.getFirstName());
-        userBd.setLastName(userDto.getLastName());
+        userBd.setFirstName(firstName);
+        userBd.setLastName(lastName);
         userService.saveUser(userBd);
-        return userDto;
+
     }
 
 }
