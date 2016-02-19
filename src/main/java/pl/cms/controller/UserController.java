@@ -1,7 +1,12 @@
 package pl.cms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+import pl.cms.dto.Converter;
 import pl.cms.dto.UserDTO;
 import pl.cms.model.UserBD;
 import pl.cms.service.UserService;
@@ -14,16 +19,22 @@ import pl.cms.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+
     private UserService userService;
 
+    @Autowired
+    public UserController(UserService userService) {
+    this.userService = userService;
+    }
+
     @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public void saveUser(@RequestParam String firstName,
-                         @RequestParam String lastName){
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO){
+        
         UserBD userBd = new UserBD();
-        userBd.setFirstName(firstName);
-        userBd.setLastName(lastName);
+        Converter.convertUserDtoToUserBd.accept(userBd,userDTO);
         userService.saveUser(userBd);
+
+        return new ResponseEntity<UserDTO>(userDTO, HttpStatus.CREATED);
 
     }
 

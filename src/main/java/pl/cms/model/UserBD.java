@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,12 @@ public class UserBD implements Serializable{
     @Getter
     @NotNull
     private String lastName;
+
+    @Column(name = "loginWlasciciela")
+    @Setter
+    @Getter
+    @NotNull
+    private String login;
 
     @ManyToMany(mappedBy = "carOwnersList")
     @Setter

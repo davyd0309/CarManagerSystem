@@ -20,15 +20,12 @@ public class UserDTO {
     @Getter
     private String lastName;
 
+    @Setter
+    @Getter
+    private String login;
+
     public UserDTO() {
     }
 
-    @Override
-    public String toString() {
-        return "UserDTO{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
+
 }
