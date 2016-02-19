@@ -9,4 +9,6 @@ import pl.cms.model.UserBD;
 
 public interface UserDao extends CrudRepository<UserBD,Integer>{
 
+    UserBD findByLogin(String login);
+
 }

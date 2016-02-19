@@ -12,7 +12,7 @@ public class MyContentConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        //registry.addViewController("/mainPage").setViewName("forward:/main.html");
+        registry.addViewController("/mainPage").setViewName("forward:/main.html");
     }
 
 }

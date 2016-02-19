@@ -3,6 +3,7 @@ package pl.cms.controller;
 import lombok.extern.java.Log;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,15 +15,14 @@ import pl.cms.dto.UserDTO;
 /**
  * Created by Judytka on 2016-02-19.
  */
-@Controller
+@RestController
 @Log
 public class LoginController {
 
-    @RequestMapping(value = "/mainPage", method = RequestMethod.GET)
-    public String loginUser(Model model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        log.info(auth.getName());
-        return "forward:/main.html";
+    @RequestMapping(value = "/loginUser", method = RequestMethod.GET)
+    public User loginUser() {
+        User activeUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return activeUser;
     }
 
 

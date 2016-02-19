@@ -10,14 +10,14 @@ $(document).ready(function(){
 
 
         $.ajax({
-            type: "POST",
+            type: 'POST',
             url:'user/save',
             data:JSON.stringify({
                 'firstName':"Tomasz",
                 'lastName': "Wrona",
                 'login': "davyd"
             }),
-            contentType: "application/json;charset=UTF-8",
+            contentType: 'application/json;charset=UTF-8',
 
             success: function(data){
             console.log(data);
