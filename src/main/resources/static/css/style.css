@@ -1,20 +1,30 @@
 
+
+body{
+    background-color: #645E5E;
+}
 /*DIV*/
 div{
-    border:solid 1px black;
+    /*border:solid 1px black;*/
 }
-#divLogo{
+.divLogo{
     width: 90%;
     margin: 0 auto;
     text-align: center;
     font-size: 50px;
 }
-#divMain{
+.divMain{
     width: 90%;
+
 }
 
+/*.divButton{*/
+    /*width: 250px;*/
+    /*height: 40px;*/
+/*}*/
 /*BUTTON*/
-.buttonDiv{
-    width: 180px;
-    height: 40px;
+.myButtons{
+
+    margin-left: 10px;
+    width: 150px;
 }

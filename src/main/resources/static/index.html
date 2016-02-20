@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Car Manager System</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/gray/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
 </head>
 <body>
-<div id="divLogo">
-    CAR MANAGER SYSTEM
+<div class="divLogo">
+<img src="image/logo.PNG">
 </div>
-<br><br><br><br><br><br>
 
-<div id="divMain">
+
+<div class="divMain">
     <div id="divButton" style="float: left;width: 20%">
-        <button id="ButtonLogin" class="buttonDiv" type="button" onclick="window.location.href='/mainPage'">Logowanie
+        <button id="ButtonLogin" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button" onclick="window.location.href='/mainPage'">Logowanie
         </button>
         <br><br><br>
-        <button id="ButtonAddUser" class="buttonDiv" type="button" onclick="window.location.href='#/dodajUzytkownika'">
+        <button id="ButtonAddUser" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button" onclick="window.location.href='#/dodajUzytkownika'">
             Rejestracja użytkownika
+        </button>
+        <br><br><br>
+        <button id="ButtonInformation" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button" onclick="window.location.href='#/informacjeDodatkowe'">
+            Informacje dodatkowe
         </button>
 
     </div>
-    <div id="divTemplate" style="float: right;width: 70%" data-ng-view>
+    <div class="divTemplate" style="float: right;width: 70%" data-ng-view>
 
 
     </div>
+
+
 
 </div>
 </body>
@@ -40,4 +48,6 @@
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 
 <script type="text/javascript" src="JScript/index.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </html>

@@ -8,9 +8,31 @@
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
 </head>
 <body>
-Witaj
-<input id="loginUser"/>
-STRONA GLOWNA
+<div class="divLogo">
+    <img src="image/logo.PNG">
+</div>
+<div class="divMain">
+    <div class="divButton" style="float: left;width: 20%">
+
+        <button id="ButtonDane" class="btn btn-primary btn-lg outline " type="button" onclick="window.location.href='#/dane'">Dane</button>
+        <br><br><br>
+        <button id="ButtonPlan" class="btn btn-primary btn-lg outline" type="button" onclick="window.location.href='#/plan'">
+            Planowanie
+        </button>
+        <br><br><br>
+        <button id="ButtonTabela" class="btn btn-primary btn-lg outline" type="button" onclick="window.location.href='#/tabela'">
+            Tabela
+        </button>
+
+    </div>
+
+    <div class="divTemplate" style="float: right;width: 70%" data-ng-view>
+
+
+    </div>
+
+</div>
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>

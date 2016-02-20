@@ -1,31 +1,43 @@
-<div class="easyui-panel" title="New Topic" style="width:400px">
-    <div style="padding:10px 60px 20px 60px">
-        <form id="ff" class="easyui-form" method="post">
-            <table cellpadding="5">
-                <tr>
-                    <td>Imie:</td>
-                    <td><input class="easyui-textbox" type="text" name="firstName" data-options="required:true"></td>
-                </tr>
-                <tr>
-                    <td>Nazwisko:</td>
-                    <td><input class="easyui-textbox" type="text" name="lastName" data-options="required:true"></td>
-                </tr>
-
-                <tr>
-                    <td>Login:</td>
-                    <td><input class="easyui-textbox" type="text" name="login" data-options="required:true"></td>
-                </tr>
-
-            </table>
-        </form>
-        <div style="text-align:center;padding:5px">
-
-            <a id="addUser" href="javascript:void(0)" class="easyui-linkbutton">Zapisz</a>
-            <a id="clearFieldsAddUser" href="javascript:void(0)" class="easyui-linkbutton">Czyść pola</a>
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">Imię</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Nazwisko</label>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="login" type="text" class="validate">
+                <label for="login">Login</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+        </div>
+    </form>
+
+    <button id="ButtonAddToDatebase" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button">
+      Zapisz użytkownika
+    </button>
+
+    <button id="ButtonClear" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button">
+        Czyść pola
+    </button>
 </div>
 
-</div>
 
 
