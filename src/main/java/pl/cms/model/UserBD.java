@@ -42,6 +42,18 @@ public class UserBD implements Serializable{
     @NotNull
     private String login;
 
+    @Column(name = "email")
+    @Setter
+    @Getter
+    @NotNull
+    private String email;
+
+    @Column(name = "password")
+    @Setter
+    @Getter
+    @NotNull
+    private String password;
+
     @ManyToMany(mappedBy = "carOwnersList")
     @Setter
     @Getter
