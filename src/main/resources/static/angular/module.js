@@ -1,1 +1,0 @@
-var cmsAngularModule = angular.module('cmsAngularModule',['ngRoute'])

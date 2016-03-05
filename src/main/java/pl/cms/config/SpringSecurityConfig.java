@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 /**
- * Created by Judytka on 2016-02-19.
+ * Created by Konrad on 2016-02-19.
  */
 @Configuration
 @EnableWebMvcSecurity
@@ -34,7 +34,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/dodajUzytkownika").permitAll()
+                .antMatchers("/","/cmsGosc/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="cmsAngularModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Manager System</title>
+    <link rel="stylesheet" type="text/css" href="../../easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+
+</head>
+<body>
+<div class="divLogo">
+    <img src="../../image/logo.PNG">
+</div>
+
+
+<div class="divMain">
+    <div id="divButton" style="float: left;width: 20%">
+        <button id="buttonLogin" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button" onclick="window.location.href='/cmsGosc/zaloguj'">Logowanie
+        </button>
+        <br><br><br>
+        <button id="buttonAddUser" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button" onclick="window.location.href='/cmsGosc/dodajUzytkownika'">
+            Rejestracja użytkownika
+        </button>
+        <br><br><br>
+        <button id="buttonInformation" style="height: 50px;line-height: 25px;" class="myButtons waves-effect waves-light btn " type="button" onclick="window.location.href='/cmsGosc/informacjeDodatkowe'">
+            Informacje dodatkowe
+        </button>
+
+    </div>
+    <div id="divContent" style="float: right;width: 70%" >
+
+      <form>
+             <label>Imię</label><input id="firstName"><br>
+             <label>Nazwisko</label><input id="lastName"><br>
+          <label>Login</label><input id="login"><br>
+          <label>Hasło</label><input id="password"><br>
+          <label>Email</label><input id="email"><br>
+          <button id="buttonAddToDatebase">Dodaj</button>
+      </form>
+
+    </div>
+
+
+
+</div>
+</body>
+
+
+<script type="text/javascript" src="../../easyui/jquery.min.js"></script>
+<script type="text/javascript" src="../../easyui/jquery.easyui.min.js"></script>
+
+<script type="text/javascript" src="../../JScript/index.js"></script>
+
+
+</html>

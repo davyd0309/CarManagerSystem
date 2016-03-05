@@ -6,10 +6,7 @@ $(document).ready(function () {
 
 //Formularz dodawania uzytkownika
 
-    $('#buttonAddUser').click(function(){
-        alert("dsdasdasda");
-        $('#divTemplateInner').load('strony/dodajUzytkownika.html');
-    });
+
 
     $('#buttonAddToDatebase').click(function submitForm() {
 
@@ -18,8 +15,8 @@ $(document).ready(function () {
             type: 'POST',
             url: 'user/save',
             data: JSON.stringify({
-                'firstName': $('#first_name').val(),
-                'lastName': $('#last_name').val(),
+                'firstName': $('#firstName').val(),
+                'lastName': $('#lastName').val(),
                 'login': $('#login').val(),
                 'password': $('#password').val(),
                 'email': $('#email').val()
