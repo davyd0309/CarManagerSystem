@@ -1,4 +1,4 @@
-package pl.cms;
+package pl.cms.logic;
 
 import lombok.extern.java.Log;
 import org.junit.Assert;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import pl.cms.CarManagerSystemApplication;
 import pl.cms.model.UserBD;
 import pl.cms.service.UserService;
 

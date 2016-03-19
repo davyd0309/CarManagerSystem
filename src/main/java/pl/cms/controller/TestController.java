@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.cms.dao.*;
 import pl.cms.model.CarBD;
@@ -39,16 +40,26 @@ public class TestController {
     private PlaceDao placeDao;
 
 
+    @RequestMapping(value = "/windex", method = RequestMethod.GET)
+    public String checkSingleView() {
+        return "index/testowanie";
+    }
+
+    @RequestMapping(value = "/wmain", method = RequestMethod.GET)
+    public String checkSingleView1() {
+        return "main/testowanie1";
+    }
+
     @RequestMapping("/car")
     @ResponseBody
     public String CarMethod() {
         StringBuilder response = new StringBuilder();
 
-        UserBD konrad = new UserBD("Konrad","Dawydiuk");
-        UserBD judyta = new UserBD("Judyta","Dawydiuk");
-        UserBD michal = new UserBD("Michal","Pawlowski");
-        UserBD marek = new UserBD("Marek","Kawalik");
-        UserBD slawek = new UserBD("Slawek","Polak");
+        UserBD konrad = new UserBD("Konrad", "Dawydiuk");
+        UserBD judyta = new UserBD("Judyta", "Dawydiuk");
+        UserBD michal = new UserBD("Michal", "Pawlowski");
+        UserBD marek = new UserBD("Marek", "Kawalik");
+        UserBD slawek = new UserBD("Slawek", "Polak");
         userDao.save(konrad);
         userDao.save(judyta);
         userDao.save(marek);
@@ -66,7 +77,7 @@ public class TestController {
         CarBD seat = new CarBD();
         seat.setCarName("Seat Ibiza");
         seat.setCarNumber("LCH4457");
-         seat.getCarOwnersList().add(userDao.findOne(1));
+        seat.getCarOwnersList().add(userDao.findOne(1));
         seat.getCarOwnersList().add(userDao.findOne(2));
         carDao.save(seat);
 
@@ -90,10 +101,7 @@ public class TestController {
         carDao.save(mazda1);
 
         Iterable<CarBD> cars = carDao.findAll();
-        cars.forEach(car->System.out.println(car.getId() +" "+ car.getCarName() +" "+ car.getCarOwnersList().size()));
-
-
-
+        cars.forEach(car -> System.out.println(car.getId() + " " + car.getCarName() + " " + car.getCarOwnersList().size()));
 
 
         ExchangeBD wymianaOpel1 = new ExchangeBD();
@@ -104,7 +112,6 @@ public class TestController {
         exchangeDao.save(wymianaOpel1);
 
 
-
         ExchangeBD wymianaOpel2 = new ExchangeBD();
         wymianaOpel2.setCarBDId(carDao.findOne(3));
         wymianaOpel2.setExchangeDate(new Date());
@@ -113,7 +120,7 @@ public class TestController {
         exchangeDao.save(wymianaOpel2);
 
 
-        ExchangeBD wymianaOpel3= new ExchangeBD();
+        ExchangeBD wymianaOpel3 = new ExchangeBD();
         wymianaOpel3.setCarBDId(carDao.findOne(2));
         wymianaOpel3.setExchangeDate(new Date());
         wymianaOpel3.setExchangeDescription("Opis wymiana opla 3");
@@ -147,13 +154,11 @@ public class TestController {
         placeDao.save(miejsce2);
 
 
-wymianaOpel1.setExchangePlace(miejsce1);
-exchangeDao.save(wymianaOpel1);
+        wymianaOpel1.setExchangePlace(miejsce1);
+        exchangeDao.save(wymianaOpel1);
 
-wymianaSeat1.setExchangePlace(miejsce2);
+        wymianaSeat1.setExchangePlace(miejsce2);
         exchangeDao.save(wymianaSeat1);
-
-
 
 
         return "forward:/index.html";
