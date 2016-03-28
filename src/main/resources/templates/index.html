@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+        >
+<head>
+    <meta charset="UTF-8"></meta>
+    <link href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen"></link>
+    <script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
+    <title>CMS</title>
+</head>
+<body>
+<div class="container">
+    <h1>Konrad</h1>
+
+    <div class="row">
+        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
+        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
+        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
+        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
+        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6"><p style="background: #ff061c">To jest paragraf 2</p></div>
+        <a th:href="@{/main}">main page</a>
+    </div>
+
+</div>
+</body>
+</html>

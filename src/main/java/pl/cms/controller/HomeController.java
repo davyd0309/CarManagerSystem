@@ -13,8 +13,11 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homePage() {
-        return "index/index";
+        return "index";
     }
 
-
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
+    public String mainPage() {
+        return "main";
+    }
 }
