@@ -1,32 +1,81 @@
 <!DOCTYPE html>
 <html lang="en"
-        xmlns:th="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
         >
 <head>
     <meta charset="UTF-8"></meta>
-    <link href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen"></link>
     <script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen"></link>
+    <link href="/static/css/style.css" rel="stylesheet"></link>
     <title>CMS</title>
 </head>
 <body>
-<div class="container">
-    <h1>Konrad</h1>
 
-    <div class="row">
-        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
-        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
-        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
-        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
-        <div class="col-md-2"><p style="color: #001cff">To jest paragraf 1</p></div>
+<div class="row">
+    <div id="logo" class="col-md-12">
+        <img src="/static/image/logo.PNG"></img>
+    </div>
+</div>
+
+<div class="row">
+    <div id="north" class="col-md-12">
+
+    </div>
+</div>
+
+<div class="row">
+    <div id="west" class="col-md-3">
+        <div class="btn-group-vertical">
+            <br></br>
+            <input value="Logowanie" type="button" class="btn btn-primary" onclick="location.href='/logowanie'"></input>
+            <br></br>
+            <input value="Dodaj użytkownika" type="button" class="btn btn-primary"
+                   onclick="location.href='/dodajUzytkownika'"></input>
+            <br></br>
+            <input value="Informacje" type="button" class="btn btn-primary"
+                   onclick="location.href='/informacje'"></input>
+            <br></br>
+
+            <input value="PRZEJDZ" type="button" class="btn btn-primary"
+                   onclick="location.href='/main'"></input>
+            <br></br>
+
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6"><p style="background: #ff061c">To jest paragraf 2</p></div>
-        <a th:href="@{/main}">main page</a>
+
+    <div id="content" class="col-md-6" th:switch="${tamplateIndex}">
+
+        <br></br>
+        <div th:case="1">
+            <div th:include="index/loginUser::loginUser"></div>
+        </div>
+        <div th:case="2">
+            <div th:include="index/addUser::addUser"></div>
+        </div>
+        <div th:case="3">
+            <div th:include="index/info::info"></div>
+        </div>
+        <br></br>
     </div>
 
-    <div th:include="index/information::info" style="background-color: #ff061c"></div>
+    <div id="east" class="col-md-3">
 
+    </div>
+</div>
+
+<div class="row">
+    <div id="south" class="col-md-12">
+
+    </div>
+</div>
+
+<div class="row">
+    <div id="footer" class="col-md-12">
+        Copyright © 2016 Konrad Dawydiuk All Rights Reserved
+    </div>
 </div>
 </body>
 </html>
+

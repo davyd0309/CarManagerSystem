@@ -6,5 +6,5 @@ import pl.cms.model.PlaceBD;
 /**
  * Created by Konrad on 06.01.2016.
  */
-public interface PlaceDao extends CrudRepository<PlaceBD,Integer> {
+public interface PlaceDao  {
 }

@@ -9,7 +9,7 @@ import pl.cms.model.CarBD;
  * Created by Judytka on 2015-12-19.
  */
 
-public interface CarDao extends CrudRepository<CarBD,Integer>{
+public interface CarDao {
 
 
 

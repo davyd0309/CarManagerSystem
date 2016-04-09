@@ -36,11 +36,6 @@ public class UserBD implements Serializable{
     @NotNull
     private String lastName;
 
-    @Column(name = "loginWlasciciela")
-    @Setter
-    @Getter
-    @NotNull
-    private String login;
 
     @Column(name = "email")
     @Setter

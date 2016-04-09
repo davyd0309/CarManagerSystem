@@ -16,8 +16,15 @@ public class HomeController {
         return "index";
     }
 
+
+    @RequestMapping(value = "/tamplate", method = RequestMethod.GET)
+    public String tamplatePage() {
+        return "tamplate";
+    }
+
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String mainPage() {
         return "main";
     }
+
 }

@@ -16,17 +16,9 @@ import java.util.List;
 @Transactional
 public class CarService {
 
-    @Autowired
-    private CarDao carDao;
 
     public CarService() {
     }
 
-    public void saveCar(CarBD carBD){
-        carDao.save(carBD);
-    }
 
-    public Iterable<CarBD> findAllCar(){
-        return carDao.findAll();
-    }
 }

@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableAutoConfiguration
 @ComponentScan
-@EnableJpaRepositories(basePackages = "pl.cms.dao")
 public class CarManagerSystemApplication {
 
     public static void main(String[] args) {

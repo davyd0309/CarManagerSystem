@@ -9,8 +9,6 @@ import java.util.List;
  */
 public interface UserService  {
 
-    UserBD saveUser(UserBD user);
-    UserBD findUserById(Integer id);
-    UserBD findUserByLogin(String login);
-    List<UserBD> getAllUser();
+
+    List getAll();
 }

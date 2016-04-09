@@ -13,7 +13,7 @@ public interface Converter {
     BiConsumer<UserBD, UserDTO> convertUserDtoToUserBd = ((userBD, userDTO) -> {
         userBD.setFirstName(userDTO.getFirstName());
         userBD.setLastName(userDTO.getLastName());
-        userBD.setLogin(userDTO.getLogin());
+
     });
 
 
