@@ -46,6 +46,8 @@ public abstract class GenericDaoImpl <E, PK extends java.io.Serializable> implem
         return getSession().createCriteria(entityClass).list();
     }
 
-
-
+    @Override
+    public E findOne(Serializable id) {
+        return (E) getSession().createCriteria(entityClass).add(Restrictions.eq("id",id));
+    }
 }

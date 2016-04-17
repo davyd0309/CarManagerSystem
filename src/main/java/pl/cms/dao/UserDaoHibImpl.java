@@ -9,9 +9,9 @@ import java.util.List;
  * Created by Konrad Dawydiuk on 09.04.2016.
  */
 @Repository
-public class UserDaoImplHibImpl extends GenericDaoImpl<UserBD,Integer> implements UserDao{
+public class UserDaoHibImpl extends GenericDaoImpl<UserBD,Integer> implements UserDao{
 
-    public UserDaoImplHibImpl() {
+    public UserDaoHibImpl() {
         super(UserBD.class);
     }
 }

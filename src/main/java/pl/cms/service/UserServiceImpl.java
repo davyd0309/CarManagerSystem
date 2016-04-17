@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.cms.dao.UserDao;
+import pl.cms.model.UserBD;
 
 import java.util.List;
 
@@ -22,4 +23,10 @@ public class UserServiceImpl implements UserService{
     public List getAll() {
         return userDao.findAll();
     }
+
+    @Override
+    public UserBD findOne(Integer id) {
+        return (UserBD)userDao.findOne(id);
+    }
+
 }

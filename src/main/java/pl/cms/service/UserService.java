@@ -11,4 +11,6 @@ public interface UserService  {
 
 
     List getAll();
+    UserBD findOne(Integer id);
+
 }

@@ -49,7 +49,7 @@ public class UserBD implements Serializable{
     @NotNull
     private String password;
 
-    @ManyToMany(mappedBy = "carOwnersList")
+    @ManyToMany(mappedBy = "carOwnersList", fetch = FetchType.EAGER)
     @Setter
     @Getter
     private List<CarBD> carList = new ArrayList<>();

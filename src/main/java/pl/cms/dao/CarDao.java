@@ -9,9 +9,6 @@ import pl.cms.model.CarBD;
  * Created by Judytka on 2015-12-19.
  */
 
-public interface CarDao {
-
-
-
+public interface CarDao extends GenericDao{
 
 }

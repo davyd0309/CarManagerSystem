@@ -13,5 +13,5 @@ public interface GenericDao <E, PK extends java.io.Serializable>{
 
     List<E> findAll();
 
-
+    E findOne(PK id);
 }
