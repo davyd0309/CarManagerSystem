@@ -30,8 +30,8 @@ private UserService userService;
     public void getAllUser(){
         List all = userService.getAll();
         Assert.assertNotNull(all);
-
     }
+
 
 
 }

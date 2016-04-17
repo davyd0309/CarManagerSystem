@@ -9,12 +9,9 @@ import java.util.List;
  * Created by Konrad Dawydiuk on 09.04.2016.
  */
 @Repository
-public class UserDaoHibImpl extends AbstractDao implements UserDao {
+public class UserDaoImplHibImpl extends GenericDaoImpl<UserBD,Integer> implements UserDao{
 
-
-    @Override
-    public List getAll() {
-        return getSession().createCriteria(UserBD.class).list();
-
+    public UserDaoImplHibImpl() {
+        super(UserBD.class);
     }
 }

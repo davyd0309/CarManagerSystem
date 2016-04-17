@@ -6,11 +6,11 @@ import pl.cms.model.UserBD;
 import java.util.List;
 
 /**
- * Created by Judytka on 2015-12-19.
+ * Created by Konrad Dawydiuk on 2015-12-19.
  */
 
-public interface UserDao {
+public interface UserDao extends GenericDao{
 
-List getAll();
+
 
 }
