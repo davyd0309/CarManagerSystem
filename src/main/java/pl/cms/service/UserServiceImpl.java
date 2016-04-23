@@ -29,4 +29,11 @@ public class UserServiceImpl implements UserService{
         return (UserBD)userDao.findOne(id);
     }
 
+    @Override
+    public UserBD saveOrUpdate(UserBD user) {
+        userDao.saveOrUpdate(user);
+       return user;
+    }
+
+
 }

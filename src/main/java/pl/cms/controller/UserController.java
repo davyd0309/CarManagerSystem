@@ -1,12 +1,16 @@
 package pl.cms.controller;
 
+import com.sun.jndi.toolkit.url.Uri;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 import pl.cms.model.UserBD;
 import pl.cms.service.UserService;
 
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -39,5 +43,17 @@ public class UserController {
         HttpStatus httpStatus = all.size()!= 0 ? HttpStatus.OK : HttpStatus.NOT_FOUND;
         return new ResponseEntity<List<UserBD>>(all, httpStatus);
     }
+
+    @RequestMapping(value = "/saveUser",method = RequestMethod.POST,consumes = "application/json")
+    public ResponseEntity<UserBD> saveUser(@RequestBody UserBD user,UriComponentsBuilder builder){
+        UserBD userBD = userService.saveOrUpdate(user);
+        HttpHeaders headers = new HttpHeaders();
+        URI locationUri = builder.path("/user").path(String.valueOf(userBD.getId())).build().toUri();
+        headers.setLocation(locationUri);
+        HttpStatus httpStatus = userBD.getId()!=null ? HttpStatus.CREATED : HttpStatus.NOT_FOUND;
+        return new ResponseEntity<UserBD>(userBD, headers, httpStatus);
+    }
+
+
 
 }

@@ -17,14 +17,15 @@ import java.util.Objects;
  * Created by Konrad Dawydiuk on 09.04.2016.
  */
 @Controller
+@RequestMapping(value = "index")
 public class IndexController {
 
-    @RequestMapping(value = "{url}", method = RequestMethod.GET)
-    public ModelAndView changeContent(@PathVariable String url){
+    @RequestMapping(value = "{urlIndex}", method = RequestMethod.GET)
+    public ModelAndView changeContent(@PathVariable String urlIndex){
         ModelAndView mav = new ModelAndView("index");
-        if(Objects.equals(url, "logowanie")) mav.addObject("tamplateIndex",1);
-        if(Objects.equals(url, "dodajUzytkownika")) mav.addObject("tamplateIndex",2);
-        if(Objects.equals(url, "informacje")) mav.addObject("tamplateIndex",3);
+        if(Objects.equals(urlIndex, "logowanie")) mav.addObject("tamplateIndex",1);
+        if(Objects.equals(urlIndex, "dodajUzytkownika")) mav.addObject("tamplateIndex",2);
+        if(Objects.equals(urlIndex, "informacje")) mav.addObject("tamplateIndex",3);
 
         return mav;
     }

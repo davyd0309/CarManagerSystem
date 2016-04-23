@@ -30,17 +30,19 @@ public class RefuelingBD {
     @Column(name = "oplataZaTankowanie")
     private BigDecimal refuelingPrice;
 
+    @Setter
+    @Getter
+    @Column(name = "opisTankowania")
+    private String refuelingDescription;
+
+
     @ManyToOne
     @JoinColumn(name = "miejsceId")
     @Setter
     @Getter
     private PlaceBD refuelingPlace;
 
-    @ManyToOne
-    @JoinColumn(name = "samochodId")
-    @Setter
-    @Getter
-    private CarBD carBDId;
+
 
 
     public RefuelingBD() {
@@ -54,7 +56,7 @@ public class RefuelingBD {
                 ", refuelingDate=" + refuelingDate +
                 ", refuelingPrice=" + refuelingPrice +
                 ", refuelingPlace=" + refuelingPlace +
-                ", carId=" + carBDId +
+
                 '}';
     }
 }

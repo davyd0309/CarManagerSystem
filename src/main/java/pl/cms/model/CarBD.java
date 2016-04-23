@@ -49,6 +49,19 @@ public class CarBD implements Serializable{
     private List<UserBD> carOwnersList = new ArrayList<>();
 
 
+    @ManyToOne
+    @JoinColumn(name = "exchangeId")
+    @Setter
+    @Getter
+    private ExchangeBD exchange;
+
+
+    @ManyToOne
+    @JoinColumn(name = "refuelingId")
+    @Setter
+    @Getter
+    private RefuelingBD refueling;
+
 
 
     public CarBD() {

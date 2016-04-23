@@ -19,7 +19,7 @@ import java.util.List;
 public abstract class GenericDaoImpl <E, PK extends java.io.Serializable> implements GenericDao {
 
     @Autowired
-    private SessionFactory sessionFactory;
+    protected SessionFactory sessionFactory;
 
     private Class<E> entityClass;
 
@@ -27,7 +27,7 @@ public abstract class GenericDaoImpl <E, PK extends java.io.Serializable> implem
         this.entityClass = entityClass;
     }
 
-    private Session getSession(){
+    protected Session getSession(){
         return sessionFactory.getCurrentSession();
     }
 
@@ -38,7 +38,7 @@ public abstract class GenericDaoImpl <E, PK extends java.io.Serializable> implem
 
     @Override
     public void saveOrUpdate(Object object) {
-
+            getSession().saveOrUpdate(object);
     }
 
     @Override
@@ -50,4 +50,6 @@ public abstract class GenericDaoImpl <E, PK extends java.io.Serializable> implem
     public E findOne(Serializable id) {
         return (E) getSession().createCriteria(entityClass).add(Restrictions.eq("id",id));
     }
+
+
 }

@@ -31,7 +31,7 @@
     <div id="west" class="col-md-3">
 
 
-        <div class="btn-group">
+        <div class="btn-group-vertical">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Action <span class="caret"></span>
             </button>
@@ -41,12 +41,20 @@
                 <li><a href="#/dodajWymiane">Dodaj wymianę</a></li>
 
             </ul>
+
+            <br></br>
+            <input value="Tabela" type="button" class="btn btn-primary" onclick="location.href='333/tabela'"></input>
         </div>
 
         </div>
 
-    <div id="content" class="col-md-6">
-        CONTENT
+    <div id="content" class="col-md-6" th:switch="${tamplateMain}">
+
+        <br></br>
+        <div th:case="1">
+            <div th:include="main/grid::grid"></div>
+        </div>
+
     </div>
 
     <div id="east" class="col-md-3">

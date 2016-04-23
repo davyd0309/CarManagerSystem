@@ -46,8 +46,6 @@
         </dependency>
 
 
-
-
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -85,6 +83,13 @@
             <version>4.0.0-alpha.2</version>
         </dependency>
         <!--Web JAR End>-->
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 
