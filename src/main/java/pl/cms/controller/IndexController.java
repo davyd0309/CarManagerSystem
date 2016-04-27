@@ -21,13 +21,13 @@ import java.util.Objects;
 public class IndexController {
 
     @RequestMapping(value = "{urlIndex}", method = RequestMethod.GET)
-    public ModelAndView changeContent(@PathVariable String urlIndex){
+    public String changeContent(@PathVariable String urlIndex){
         ModelAndView mav = new ModelAndView("index");
         if(Objects.equals(urlIndex, "logowanie")) mav.addObject("tamplateIndex",1);
         if(Objects.equals(urlIndex, "dodajUzytkownika")) mav.addObject("tamplateIndex",2);
         if(Objects.equals(urlIndex, "informacje")) mav.addObject("tamplateIndex",3);
 
-        return mav;
+        return "redirect:/index";
     }
 
 
