@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Konrad Dawydiuk on 23.04.2016.
  */
 @RestController
-@RequestMapping("/car")
+@RequestMapping("car")
 public class CarController {
 
 private CarService carService;

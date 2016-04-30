@@ -6,3 +6,8 @@ div{
     /*border: 1px solid #000000;*/
     text-align: center;
 }
+
+
+.listButtons{
+    width: 200px;
+}

@@ -21,9 +21,10 @@ import java.util.Objects;
 public class IndexController {
 
     @RequestMapping(value = "{url}", method = RequestMethod.GET)
-    public String changeContent(@PathVariable String url){
+    public String changeContentIndex(@PathVariable String url){
         if (url.equals("info")) return "index/info";
         if (url.equals("loginUser")) return "index/loginUser";
+        if (url.equals("addUser")) return "index/addUser";
         else {
             return "index";
         }

@@ -15,11 +15,13 @@ import java.util.Objects;
 @RequestMapping(value = "main")
 public class MainController {
 
-    @RequestMapping(value = "{userId}/{urlMain}", method = RequestMethod.GET)
-    public ModelAndView changeContent(@PathVariable Integer userId,@PathVariable String urlMain){
-        ModelAndView mav = new ModelAndView("main");
-        if(Objects.equals(urlMain, "tabela")) mav.addObject("tamplateMain",1);
-        return mav;
+
+@RequestMapping(value = "{url}",method = RequestMethod.GET)
+public String changeContentMain(@PathVariable String url){
+    if (url.equals("grid")) return "main/grid";
+    else {
+        return "main";
     }
+}
 
 }

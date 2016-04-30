@@ -10,6 +10,14 @@ var loginUser = function () {
     $('#content').load('index/loginUser');
 };
 
+var addUser = function () {
+    $('#content').load('index/addUser');
+};
+
+var mainPage = function () {
+    window.location="main";
+};
+
 var saveUser = function () {
     var user = {
         "firstName": $('#userFirstName').val(),

@@ -23,8 +23,8 @@ public class HomeController {
         return "tamplate";
     }
 
-    @RequestMapping(value = "main/{userId}", method = RequestMethod.GET)
-    public String mainPage(@PathVariable Integer userId) {
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
+    public String mainPage() {
         return "main";
     }
 
