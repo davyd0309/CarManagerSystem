@@ -20,15 +20,16 @@ import java.util.Objects;
 @RequestMapping(value = "index")
 public class IndexController {
 
-    @RequestMapping(value = "{urlIndex}", method = RequestMethod.GET)
-    public String changeContent(@PathVariable String urlIndex){
-        ModelAndView mav = new ModelAndView("index");
-        if(Objects.equals(urlIndex, "logowanie")) mav.addObject("tamplateIndex",1);
-        if(Objects.equals(urlIndex, "dodajUzytkownika")) mav.addObject("tamplateIndex",2);
-        if(Objects.equals(urlIndex, "informacje")) mav.addObject("tamplateIndex",3);
-
-        return "redirect:/index";
+    @RequestMapping(value = "{url}", method = RequestMethod.GET)
+    public String changeContent(@PathVariable String url){
+        if (url.equals("info")) return "index/info";
+        if (url.equals("loginUser")) return "index/loginUser";
+        else {
+            return "index";
+        }
     }
+
+
 
 
 }

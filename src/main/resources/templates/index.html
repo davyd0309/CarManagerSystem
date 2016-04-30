@@ -4,11 +4,15 @@
         >
 <head>
     <meta charset="UTF-8"></meta>
+
     <script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/static/js/index.js"></script>
     <link href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen"></link>
+
     <link href="/static/css/style.css" rel="stylesheet"></link>
+
+    <script src="/static/js/index.js"></script>
+
     <title>CMS</title>
 </head>
 <body>
@@ -27,38 +31,28 @@
 
 <div class="row">
     <div id="west" class="col-md-3">
-        <div class="btn-group-vertical">
+        <div class="btn-group-vertical" role="group" aria-label="...">
             <br></br>
-            <input value="Logowanie" type="button" class="btn btn-primary" onclick="location.href='logowanie'"></input>
+            <button type="button" class="btn btn-primary"  onclick="loginUser()">Logowanie</button>
             <br></br>
-            <input value="Dodaj użytkownika" type="button" class="btn btn-primary"
-                   onclick="location.href='index/dodajUzytkownika'"></input>
+            <button type="button" class="btn btn-primary">Dodaj użytkownika</button>
             <br></br>
-            <input value="Informacje" type="button" class="btn btn-primary"
-                   onclick="location.href='index/informacje'"></input>
+            <button type="button" class="btn btn-primary" onclick="info()">Informacje</button>
             <br></br>
 
-            <input value="PRZEJDZ" type="button" class="btn btn-primary"
-                   onclick="location.href='/main/333'"></input>
+            <button type="button" class="btn btn-primary">PRZEJDZ</button>
             <br></br>
+
 
         </div>
     </div>
 
 
-    <div id="content" class="col-md-6" th:switch="${tamplateIndex}">
+    <div id="content" class="col-md-6" >
 
-        <br></br>
-        <div th:case="1">
-            <div th:include="index/loginUser::loginUser"></div>
-        </div>
-        <div th:case="2">
-            <div th:include="index/addUser::addUser"></div>
-        </div>
-        <div th:case="3">
-            <div th:include="index/info::info"></div>
-        </div>
-        <br></br>
+
+
+
     </div>
 
     <div id="east" class="col-md-3">
