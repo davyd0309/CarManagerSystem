@@ -44,25 +44,16 @@ public class CarBD implements Serializable{
             joinColumns = {@JoinColumn(name = "id_samochodu")},
             inverseJoinColumns = {@JoinColumn(name = "id_wlasciciela")}
     )
-    @Setter
-    @Getter
     private List<UserBD> carOwnersList = new ArrayList<>();
 
 
-    @ManyToOne
-    @JoinColumn(name = "exchangeId")
-    @Setter
-    @Getter
-    private ExchangeBD exchange;
+    @OneToMany
+    @JoinColumn(name = "carId")
+    private List<ExchangeBD> exchangeList = new ArrayList<>();
 
-
-    @ManyToOne
-    @JoinColumn(name = "refuelingId")
-    @Setter
-    @Getter
-    private RefuelingBD refueling;
-
-
+    @OneToMany
+    @JoinColumn(name = "carId")
+    private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public CarBD() {
     }

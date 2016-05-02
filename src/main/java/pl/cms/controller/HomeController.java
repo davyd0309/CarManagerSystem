@@ -16,8 +16,6 @@ public class HomeController {
     public String homePage() {
         return "index";
     }
-
-
     @RequestMapping(value = "/tamplate", method = RequestMethod.GET)
     public String tamplatePage() {
         return "tamplate";
