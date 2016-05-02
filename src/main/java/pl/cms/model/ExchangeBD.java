@@ -24,7 +24,7 @@ public class ExchangeBD {
     @Setter
     @Getter
     @Column(name = "dataWymiany")
-    private LocalDate exchangeDate;
+    private Date exchangeDate;
 
 
     @Setter
