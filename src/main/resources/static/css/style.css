@@ -11,3 +11,9 @@ div{
 .listButtons{
     width: 200px;
 }
+
+#grid_container
+{
+    width: 100%;
+    max-width: 560px;
+}
