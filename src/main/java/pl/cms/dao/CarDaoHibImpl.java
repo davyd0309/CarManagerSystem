@@ -22,12 +22,12 @@ public class CarDaoHibImpl extends GenericDaoImpl<CarBD, Integer> implements Car
     @Override
     public List<InformationDTO> getInformation() {
         return getSession().createCriteria(CarBD.class, "car")
-                .createAlias("car.exchange", "exchange")
-                .createAlias("car.refueling", "refueling")
+                .createAlias("car.exchangeList", "exchangeList")
+                .createAlias("car.refuelingList", "refuelingList")
                 .setProjection(Projections.projectionList()
                         .add(Projections.property("car.carName"), "carName")
-                        .add(Projections.property("exchange.exchangeDescription"), "exchange")
-                        .add(Projections.property("refueling.refuelingDescription"), "refueling"))
+                        .add(Projections.property("exchangeList.exchangeDescription"), "exchange")
+                        .add(Projections.property("refuelingList.refuelingDescription"), "refueling"))
                 .setResultTransformer(
                         Transformers.aliasToBean(InformationDTO.class)).list();
 

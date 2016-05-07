@@ -16,12 +16,16 @@ import java.util.Objects;
 public class MainController {
 
 
-@RequestMapping(value = "{url}",method = RequestMethod.GET)
-public String changeContentMain(@PathVariable String url){
-    if (url.equals("grid")) return "main/grid";
-    else {
-        return "main";
+    @RequestMapping(value = "{url}", method = RequestMethod.GET)
+    public String changeContentMain(@PathVariable String url) {
+//    if (url.equals("addCar")) return "main/dialog/addCar";
+//    else {
+//        return "main";
+//    }
+//}
+        return null;
     }
-}
+
+
 
 }

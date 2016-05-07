@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "Tankowania")
-public class RefuelingBD {
+public class RefuelingBD  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,15 +36,17 @@ public class RefuelingBD {
     @Column(name = "opisTankowania")
     private String refuelingDescription;
 
-
-    @ManyToOne
-    @JoinColumn(name = "miejsceId")
     @Setter
     @Getter
-    private PlaceBD refuelingPlace;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="placeId")
+    private PlaceBD placeId;
 
-
-
+    @Setter
+    @Getter
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="carId")
+    private CarBD carId;
 
     public RefuelingBD() {
     }
@@ -55,7 +58,7 @@ public class RefuelingBD {
                 "Id=" + Id +
                 ", refuelingDate=" + refuelingDate +
                 ", refuelingPrice=" + refuelingPrice +
-                ", refuelingPlace=" + refuelingPlace +
+                
 
                 '}';
     }

@@ -4,13 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Konrad on 06.01.2016.
  */
 @Entity
 @Table(name = "Miejsca")
-public class PlaceBD {
+public class PlaceBD  {
 
 
     @Id
@@ -33,6 +36,12 @@ public class PlaceBD {
     @Setter
     @Getter
     private int point;
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="placeId")
+    private List<ExchangeBD> exchangeList = new ArrayList<>();
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="placeId")
+    private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public PlaceBD() {
     }

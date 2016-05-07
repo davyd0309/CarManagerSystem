@@ -35,8 +35,9 @@ var saveUser = function () {
         success: function () {
             console.log(user);
         },
-        error: function () {
-            console.log("BLADDDDD");
+        error: function (jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.log( "Request Failed: " + err );
         }
     });
 

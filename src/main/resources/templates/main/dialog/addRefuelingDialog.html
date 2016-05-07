@@ -1,0 +1,46 @@
+<div id="addRefuelingDialog" style="display:none;">
+    <form class="form-group">
+
+        <div class="form-group">
+            <label for="carListSelect">Nazwa samochodu</label>
+            <select class="form-control" id="carListSelect">
+
+            </select>
+        </div>
+        <br></br>
+        <label>Data tankowania</label>
+        <input type="text" class="form-control" id="refuelingDateInput"></input>
+        <br></br>
+
+        <label>Oplata za tankowanie</label>
+        <input type="text" class="form-control" id="refuelingPriceInput"></input>
+        <br></br>
+
+        <label>Opis</label>
+        <input type="text" class="form-control" id="refuelingDescriptionInput"></input>
+
+        <label>Miejsce</label>
+        <input type="text" class="form-control" id="refuelingPlaceInput"></input>
+        <br></br>
+
+
+        <br></br>
+        <button id="addRefuelingButton" type="submit" class="btn btn-primary" onclick="saveRefueling()">Dodaj</button>
+    </form>
+
+</div>
+<script>
+    $('#addRefuelingDialog').igDialog({ height: 350,width: 440,headerText: "Dodawanie tankowania" });
+
+    $.ajax({
+        url:'car/carListForSelect',
+        type:'GET',
+        contentType: 'application/json;charset=UTF-8',
+        success: function( data ) {
+            $.each(data, function(i, value) {
+                $('#carListSelect').append($('<option></option>`').text(value.carName).attr('value',value.carName));
+            });
+        }
+    });
+
+</script>

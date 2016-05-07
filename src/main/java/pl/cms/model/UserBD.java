@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "Wlasciciele")
-public class UserBD implements Serializable{
+public class UserBD {
 
 
     @Id

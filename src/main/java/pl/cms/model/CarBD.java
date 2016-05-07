@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "Samochody")
-public class CarBD implements Serializable{
+public class CarBD {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,12 +47,10 @@ public class CarBD implements Serializable{
     private List<UserBD> carOwnersList = new ArrayList<>();
 
 
-    @OneToMany
-    @JoinColumn(name = "carId")
+        @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,mappedBy="carId")
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
-    @OneToMany
-    @JoinColumn(name = "carId")
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,mappedBy="carId")
     private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public CarBD() {

@@ -17,5 +17,6 @@ import java.util.List;
 public interface CarService {
 
 List<InformationDTO> getInformation();
-
+void saveOrUpdate(CarBD car);
+List<CarBD>getAll();
 }
