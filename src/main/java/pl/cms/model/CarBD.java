@@ -52,15 +52,13 @@ public class CarBD {
     @Setter
     @Getter
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "car")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car")
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
     @Setter
     @Getter
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "car")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car")
     private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public CarBD() {

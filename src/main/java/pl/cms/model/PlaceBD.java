@@ -1,5 +1,6 @@
 package pl.cms.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,15 +40,16 @@ public class PlaceBD  {
 
     @Setter
     @Getter
-    @OneToMany
-    @JoinColumn(name = "place")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "place")
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
     @Setter
     @Getter
-    @OneToMany
-    @JoinColumn(name = "place")
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "place")
     private List<RefuelingBD> refuelingList = new ArrayList<>();
+
 
     public PlaceBD() {
     }

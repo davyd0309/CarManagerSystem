@@ -38,7 +38,17 @@ public class ExchangeBD {
     private BigDecimal exchangePrice;
 
 
+    @Setter
+    @Getter
+    @ManyToOne
+    @JoinColumn(name = "car")
+    private CarBD car;
 
+    @Setter
+    @Getter
+    @ManyToOne
+    @JoinColumn(name = "place")
+    private PlaceBD place;
 
     public ExchangeBD() {
     }

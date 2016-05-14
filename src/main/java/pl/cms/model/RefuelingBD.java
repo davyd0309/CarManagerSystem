@@ -36,6 +36,17 @@ public class RefuelingBD {
     @Column(name = "opisTankowania")
     private String refuelingDescription;
 
+    @Setter
+    @Getter
+    @ManyToOne
+    @JoinColumn(name = "car")
+    private CarBD car;
+
+    @Setter
+    @Getter
+    @ManyToOne
+    @JoinColumn(name = "place")
+    private PlaceBD place;
 
     public RefuelingBD() {
     }
