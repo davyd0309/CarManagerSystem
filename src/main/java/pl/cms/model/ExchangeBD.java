@@ -38,17 +38,7 @@ public class ExchangeBD {
     private BigDecimal exchangePrice;
 
 
-    @Setter
-    @Getter
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="placeId")
-    private PlaceBD placeId;
 
-    @Setter
-    @Getter
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="carId")
-    private CarBD carId;
 
     public ExchangeBD() {
     }

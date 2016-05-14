@@ -1,4 +1,4 @@
-<div id="addRefuelingDialog" style="display:none;">
+<div id="addExchangeDialog" style="display:none;">
     <form class="form-group">
 
         <div class="form-group">
@@ -8,29 +8,29 @@
             </select>
         </div>
         <br></br>
-        <label>Data tankowania</label>
-        <input type="text" class="form-control" id="refuelingDateInput"></input>
+        <label>Data wymiany</label>
+        <input type="text" class="form-control" id="exchangeDateInput"></input>
         <br></br>
 
-        <label>Oplata za tankowanie</label>
-        <input type="text" class="form-control" id="refuelingPriceInput"></input>
+        <label>Oplata za wymiane</label>
+        <input type="text" class="form-control" id="exchangePriceInput"></input>
         <br></br>
 
         <label>Opis</label>
-        <input type="text" class="form-control" id="refuelingDescriptionInput"></input>
+        <input type="text" class="form-control" id="exchangeDescriptionInput"></input>
 
         <label>Miejsce</label>
-        <input type="text" class="form-control" id="refuelingPlaceInput"></input>
+        <input type="text" class="form-control" id="exchangePlaceInput"></input>
         <br></br>
 
 
         <br></br>
 
     </form>
-    <button id="addRefuelingButton" class="btn btn-primary" onclick="saveRefueling()">Dodaj</button>
+    <button id="addExchangeButton" class="btn btn-primary" onclick="saveExchange()">Dodaj</button>
 </div>
 <script>
-    $('#addRefuelingDialog').igDialog({ height: 350,width: 440,headerText: "Dodawanie tankowania" });
+    $('#addExchangeDialog').igDialog({ height: 350,width: 440,headerText: "Dodawanie wymiany" });
 
     $.ajax({
         url:'car/carListForSelect',

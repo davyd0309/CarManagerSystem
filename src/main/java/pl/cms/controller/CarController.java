@@ -38,7 +38,7 @@ private CarService carService;
     public ResponseEntity<CarBD> addAndSaveCar(@RequestBody CarBD car){
         carService.saveOrUpdate(car);
         HttpStatus httpStatus = car !=null ? HttpStatus.CREATED : HttpStatus.CONFLICT;
-        return new ResponseEntity<CarBD>(httpStatus);
+        return new ResponseEntity<CarBD>(car,httpStatus);
     }
 
     @RequestMapping(value = "carListForSelect", method = RequestMethod.GET,produces = "application/json")

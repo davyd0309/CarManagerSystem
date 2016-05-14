@@ -1,5 +1,6 @@
 package pl.cms.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,10 +48,19 @@ public class CarBD {
     private List<UserBD> carOwnersList = new ArrayList<>();
 
 
-        @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,mappedBy="carId")
+
+    @Setter
+    @Getter
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "car")
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
-    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,mappedBy="carId")
+    @Setter
+    @Getter
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "car")
     private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public CarBD() {

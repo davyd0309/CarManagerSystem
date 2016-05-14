@@ -36,6 +36,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<CarBD> getAll() {
-        return carDao.findAll();
+        List all = carDao.findAll();
+        return all;
     }
 }

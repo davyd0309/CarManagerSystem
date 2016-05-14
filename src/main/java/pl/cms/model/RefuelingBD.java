@@ -13,7 +13,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "Tankowania")
-public class RefuelingBD  {
+public class RefuelingBD {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,17 +36,6 @@ public class RefuelingBD  {
     @Column(name = "opisTankowania")
     private String refuelingDescription;
 
-    @Setter
-    @Getter
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="placeId")
-    private PlaceBD placeId;
-
-    @Setter
-    @Getter
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="carId")
-    private CarBD carId;
 
     public RefuelingBD() {
     }
@@ -58,7 +47,7 @@ public class RefuelingBD  {
                 "Id=" + Id +
                 ", refuelingDate=" + refuelingDate +
                 ", refuelingPrice=" + refuelingPrice +
-                
+
 
                 '}';
     }

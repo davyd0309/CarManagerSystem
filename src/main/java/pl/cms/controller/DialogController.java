@@ -16,6 +16,7 @@ public class DialogController {
     public String changeContentIndex(@PathVariable String url){
         if (url.equals("addCarDialog")) return "main/dialog/addCarDialog";
         if (url.equals("addRefuelingDialog")) return "main/dialog/addRefuelingDialog";
+        if (url.equals("addExchangeDialog")) return "main/dialog/addExchangeDialog";
         else {
             return null;
         }

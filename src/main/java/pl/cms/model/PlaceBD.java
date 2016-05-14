@@ -37,10 +37,16 @@ public class PlaceBD  {
     @Getter
     private int point;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="placeId")
+    @Setter
+    @Getter
+    @OneToMany
+    @JoinColumn(name = "place")
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="placeId")
+    @Setter
+    @Getter
+    @OneToMany
+    @JoinColumn(name = "place")
     private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public PlaceBD() {
