@@ -1,0 +1,36 @@
+
+
+    <form class="form-horizontal">
+        <fieldset>
+
+
+            <legend>Dodawanie miejsca</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="placeName">Nazwa</label>
+                <div class="col-md-4">
+                    <input id="placeName"  type="text" placeholder="nazwa miejsca" class="form-control input-md" required=""></input>
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="placeAddress">Adres</label>
+                <div class="col-md-4">
+                    <input id="placeAddress"  type="text" placeholder="adres" class="form-control input-md" required=""></input>
+
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="buttonSaveUser"></label>
+        <div class="col-md-8">
+            <button id="buttonSaveUser" name="buttonSave" class="btn btn-primary" onclick="savePlace()">Zapisz</button>
+            <button id="buttonClear" name="buttonClear" class="btn btn-danger" onclick="clearAddPlaceForm()">Reset</button>
+        </div>
+    </div>

@@ -6,14 +6,18 @@ var info = function () {
     $('#content').load('index/info');
 };
 
-var loginUser = function () {
-    $('#content').load('index/loginUser');
-};
 
 var addUser = function () {
     $('#content').load('index/addUser');
 };
 
+var addPlace = function () {
+    $('#content').load('index/addPlace');
+};
+
+var goToMain = function() {
+    location.replace("/main");
+};
 
 var saveUser = function () {
     var user = {
@@ -30,7 +34,8 @@ var saveUser = function () {
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify(user),
         success: function () {
-            console.log(user);
+            alert("Dodano użytkownika "+user.firstName +" "+user.lastName );
+            clearAddUserForm();
         },
         error: function (jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
@@ -39,6 +44,43 @@ var saveUser = function () {
     });
 
 
+};
+
+var clearAddUserForm = function(){
+    $('#userFirstName').val('');
+       $('#userLstName').val('');
+       $('#userEmail').val('');
+       $('#userPassword').val('');
+};
+
+
+var savePlace = function () {
+    var place = {
+        "name": $('#placeName').val(),
+        "address": $('#placeAddress').val(),
+    };
+
+    $.ajax({
+        url: 'place/savePlace',
+        type: 'POST',
+        contentType: 'application/json;charset=UTF-8',
+        data: JSON.stringify(place),
+        success: function () {
+            alert("Dodano miejsce "+place.name);
+            clearAddPlaceForm();
+        },
+        error: function (jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.log( "Request Failed: " + err );
+        }
+    });
+
+
+};
+
+var clearAddPlaceForm = function(){
+    $('#placeName').val('');
+    $('#placeAddress').val('');
 };
 
 $(document).ready(function () {

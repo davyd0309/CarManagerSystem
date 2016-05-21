@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
@@ -24,17 +26,21 @@ public class ExchangeBD {
     @Setter
     @Getter
     @Column(name = "dataWymiany")
+    @NotNull
     private Date exchangeDate;
 
 
     @Setter
     @Getter
     @Column(name = "opisWymiany")
+    @NotNull
+    @Size(min = 3,max = 100)
     private String exchangeDescription;
 
     @Setter
     @Getter
     @Column(name = "oplataZaWymiane")
+    @NotNull
     private BigDecimal exchangePrice;
 
 
@@ -42,12 +48,14 @@ public class ExchangeBD {
     @Getter
     @ManyToOne
     @JoinColumn(name = "car")
+    @NotNull
     private CarBD car;
 
     @Setter
     @Getter
     @ManyToOne
     @JoinColumn(name = "place")
+    @NotNull
     private PlaceBD place;
 
     public ExchangeBD() {

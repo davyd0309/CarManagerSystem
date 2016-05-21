@@ -25,6 +25,7 @@ public class IndexController {
         if (url.equals("info")) return "index/info";
         if (url.equals("loginUser")) return "index/loginUser";
         if (url.equals("addUser")) return "index/addUser";
+        if (url.equals("addPlace")) return "index/addPlace";
         else {
             return "index";
         }

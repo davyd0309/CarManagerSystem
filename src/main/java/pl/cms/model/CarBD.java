@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,16 +29,20 @@ public class CarBD {
     @Column(name = "nazwaSamochodu")
     @Setter
     @Getter
+    @NotNull
+    @Size(min = 3,max = 30)
     private String carName;
 
     @Column(name = "numerSamochodu")
     @Setter
     @Getter
+    @NotNull
     private String carNumber;
 
     @Column(name = "stanLicznikaSamochodu")
     @Setter
     @Getter
+    @NotNull
     private int kmCounter;
 
     @ManyToMany
@@ -52,13 +58,13 @@ public class CarBD {
     @Setter
     @Getter
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car",cascade = CascadeType.ALL)
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
     @Setter
     @Getter
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car",cascade = CascadeType.ALL)
     private List<RefuelingBD> refuelingList = new ArrayList<>();
 
     public CarBD() {

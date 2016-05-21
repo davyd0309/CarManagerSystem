@@ -1,19 +1,20 @@
 
-
-    <form class="form-group">
+<div onload="document.f.username.focus();">
+    <form class="form-group" name="f" action="/login" method="POST">
         <div class="form-group">
-            <label class="sr-only" for="exampleInputEmail3">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="email"></input>
+            <label class="sr-only" for="exampleInputUserLogin">Email</label>
+            <input name="username" class="form-control" id="exampleInputUserLogin" placeholder="nazwa użytkownika"></input>
         </div>
         <div class="form-group">
-            <label class="sr-only" for="exampleInputPassword3">Hasło</label>
-            <input type="password" class="form-control" id="exampleInputPassword3" placeholder="hasło"></input>
+            <label class="sr-only" for="exampleInputUserPassword">Hasło</label>
+            <input type="password" name="password" class="form-control" id="exampleInputUserPassword" placeholder="hasło"></input>
         </div>
         <div class="checkbox">
             <label>
                 <input type="checkbox"> Zapamiętaj mnie </input>
             </label>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" name="submit" class="btn btn-primary">Sign in</button>
+        <input name="_csrf" type="hidden" value="1176cd6b-ebd3-4aa7-a9ca-e5b290bc799e"></input>
     </form>
-
+</div>

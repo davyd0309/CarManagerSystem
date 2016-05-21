@@ -1,11 +1,14 @@
 package pl.cms.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +31,14 @@ public class UserBD {
     @Setter
     @Getter
     @NotNull
+    @Size(min = 3,max = 30)
     private String firstName;
 
     @Column(name = "nazwiskoWlasciciela")
     @Setter
     @Getter
     @NotNull
+    @Size(min = 3,max = 30)
     private String lastName;
 
 
@@ -52,6 +57,7 @@ public class UserBD {
     @ManyToMany(mappedBy = "carOwnersList", fetch = FetchType.EAGER)
     @Setter
     @Getter
+    @JsonIgnore
     private List<CarBD> carList = new ArrayList<>();
 
 

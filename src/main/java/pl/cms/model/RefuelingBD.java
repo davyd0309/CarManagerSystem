@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -24,28 +26,34 @@ public class RefuelingBD {
     @Setter
     @Getter
     @Column(name = "dataTankowania")
+    @NotNull
     private Date refuelingDate;
 
     @Setter
     @Getter
     @Column(name = "oplataZaTankowanie")
+    @NotNull
     private BigDecimal refuelingPrice;
 
     @Setter
     @Getter
     @Column(name = "opisTankowania")
+    @NotNull
+    @Size(min = 3,max = 100)
     private String refuelingDescription;
 
     @Setter
     @Getter
     @ManyToOne
     @JoinColumn(name = "car")
+    @NotNull
     private CarBD car;
 
     @Setter
     @Getter
     @ManyToOne
     @JoinColumn(name = "place")
+    @NotNull
     private PlaceBD place;
 
     public RefuelingBD() {

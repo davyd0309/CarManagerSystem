@@ -21,8 +21,11 @@ var saveCar = function(){
         url: "car/addCar",
         contentType:"application/json",
         data:  JSON.stringify(car),
-        success: function (data) {
-            console.log(data);
+        success: function () {
+            alert("Dodano samochód "+car.carName +" o numerze "+car.carNumber );
+            $('#carNameInput').val('');
+            $('#carNumberInput').val('');
+            $('#kmCounterInput').val('');
         },
         error: function (jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
@@ -37,7 +40,7 @@ var saveCar = function(){
 
 var saveRefueling = function() {
     var refueling = {
-        "car": $('#carListSelect').val(),
+        "car": $('#carListSelect').get(0),
         "refuelingDate": $('#refuelingDateInput').val(),
         "refuelingPrice": $('#refuelingPriceInput').val(),
         "refuelingDescription": $('#refuelingDescriptionInput').val(),
@@ -49,8 +52,12 @@ var saveRefueling = function() {
         type: 'POST',
         contentType:"application/json",
         data:  JSON.stringify(refueling),
-        success: function (data) {
-            console.log(data);
+        success: function () {
+            alert("Dodano nowe tankowanie");
+            $('#refuelingDateInput').val('');
+            $('#refuelingPriceInput').val('');
+            $('#refuelingDescriptionInput').val('');
+
         },
         error: function (jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
@@ -75,8 +82,11 @@ var saveRefueling = function() {
             type: 'POST',
             contentType:"application/json",
             data:  JSON.stringify(exchange),
-            success: function (data) {
-                console.log(data);
+            success: function () {
+                alert("Dodano nową wymianę");
+                $('#exchangeDateInput').val('');
+                $('#exchangePriceInput').val('');
+                $('#exchangeDescriptionInput').val('');
             },
             error: function (jqxhr, textStatus, error) {
                 var err = textStatus + ", " + error;

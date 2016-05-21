@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String homePage() {
         return "index";
     }
@@ -25,5 +25,6 @@ public class HomeController {
     public String mainPage() {
         return "main";
     }
+
 
 }

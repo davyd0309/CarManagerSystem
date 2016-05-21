@@ -47,11 +47,8 @@ public class UserController {
     @RequestMapping(value = "/saveUser",method = RequestMethod.POST,consumes = "application/json")
     public ResponseEntity<UserBD> saveUser(@RequestBody UserBD user,UriComponentsBuilder builder){
         UserBD userBD = userService.saveOrUpdate(user);
-        HttpHeaders headers = new HttpHeaders();
-        URI locationUri = builder.path("/user").path(String.valueOf(userBD.getId())).build().toUri();
-        headers.setLocation(locationUri);
         HttpStatus httpStatus = userBD.getId()!=null ? HttpStatus.CREATED : HttpStatus.NOT_FOUND;
-        return new ResponseEntity<UserBD>(userBD, headers, httpStatus);
+        return new ResponseEntity<UserBD>(userBD, httpStatus);
     }
 
 
