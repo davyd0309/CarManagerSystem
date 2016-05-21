@@ -50,6 +50,7 @@ public class PlaceBD  {
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "place")
     private List<ExchangeBD> exchangeList = new ArrayList<>();
 
+
     @Setter
     @Getter
     @JsonIgnore

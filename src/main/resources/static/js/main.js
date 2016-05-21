@@ -40,11 +40,11 @@ var saveCar = function(){
 
 var saveRefueling = function() {
     var refueling = {
-        "car": $('#carListSelect').get(0),
+        "car": {'id':$('#carListSelect').get(0)},
         "refuelingDate": $('#refuelingDateInput').val(),
         "refuelingPrice": $('#refuelingPriceInput').val(),
         "refuelingDescription": $('#refuelingDescriptionInput').val(),
-        "place": $('#refuelingPlaceInput').val()
+        "place": {'id':1}
     };
 
     $.ajax({

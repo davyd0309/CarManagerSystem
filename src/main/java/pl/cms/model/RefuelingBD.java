@@ -1,10 +1,12 @@
 package pl.cms.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -49,12 +51,12 @@ public class RefuelingBD {
     @NotNull
     private CarBD car;
 
+
     @Setter
     @Getter
     @ManyToOne
     @JoinColumn(name = "place")
-    @NotNull
-    private PlaceBD place;
+    private PlaceBD place ;
 
     public RefuelingBD() {
     }
