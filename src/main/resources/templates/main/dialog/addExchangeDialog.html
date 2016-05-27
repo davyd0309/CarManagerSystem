@@ -6,6 +6,11 @@
             <select class="form-control" id="carListSelect">
 
             </select>
+
+            <label for="placeListSelect">Miejsce</label>
+            <select class="form-control" id="placeListSelect">
+
+            </select>
         </div>
         <br></br>
         <label>Data wymiany</label>
@@ -19,9 +24,6 @@
         <label>Opis</label>
         <input type="text" class="form-control" id="exchangeDescriptionInput"></input>
 
-        <label>Miejsce</label>
-        <input type="text" class="form-control" id="exchangePlaceInput"></input>
-        <br></br>
 
 
         <br></br>
@@ -39,6 +41,17 @@
         success: function( data ) {
             $.each(data, function(i, value) {
                 $('#carListSelect').append($('<option></option>`').text(value.carName).attr('value',value));
+            });
+        }
+    });
+
+    $.ajax({
+        url:'place/allPlace',
+        type:'GET',
+        contentType: 'application/json;charset=UTF-8',
+        success: function( data ) {
+            $.each(data, function(i, value) {
+                $('#placeListSelect').append($('<option></option>`').text(value.address +" "+value.name).attr('value',value));
             });
         }
     });

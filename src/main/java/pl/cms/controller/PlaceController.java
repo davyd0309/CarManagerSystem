@@ -19,7 +19,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/place")
+@RequestMapping("place")
 public class PlaceController {
 
 
