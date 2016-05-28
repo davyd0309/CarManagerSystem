@@ -70,11 +70,11 @@ var saveRefueling = function() {
 
     var saveExchange = function(){
         var exchange = {
-            "car": $('#carListSelect').val(),
+            "car": {'id':parseInt($('#carListSelect').get(0).id,10)},
             "exchangeDate": $('#exchangeDateInput').val(),
             "exchangePrice": $('#exchangePriceInput').val(),
             "exchangeDescription": $('#exchangeDescriptionInput').val(),
-            "place": $('#exchangePlaceInput').val()
+            "place": {'id':parseInt($('#placeListSelect').get(0).id,10)}
         };
 
         $.ajax({
