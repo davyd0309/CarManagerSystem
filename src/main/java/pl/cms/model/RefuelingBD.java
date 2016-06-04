@@ -46,15 +46,14 @@ public class RefuelingBD {
 
     @Setter
     @Getter
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "car")
-    @NotNull
     private CarBD car;
 
 
     @Setter
     @Getter
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "place")
     private PlaceBD place ;
 

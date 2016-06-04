@@ -48,14 +48,12 @@ public class ExchangeBD {
     @Getter
     @ManyToOne
     @JoinColumn(name = "car")
-    @NotNull
     private CarBD car;
 
     @Setter
     @Getter
     @ManyToOne
     @JoinColumn(name = "place")
-    @NotNull
     private PlaceBD place;
 
     public ExchangeBD() {
