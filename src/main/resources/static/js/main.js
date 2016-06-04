@@ -69,9 +69,12 @@ var saveRefueling = function() {
 };
 
     var saveExchange = function(){
-        var car = $('#carListSelect').get(0);
+        //console.log($('#carListSelect option:selected').val());
+        var car = $('#carListSelect option:selected').attr('value');
         var exchange = {
-            "car": car,
+            "car": {
+                //CAR OBJECT
+            },
             "exchangeDate": $('#exchangeDateInput').val(),
             "exchangePrice": $('#exchangePriceInput').val(),
             "exchangeDescription": $('#exchangeDescriptionInput').val(),
