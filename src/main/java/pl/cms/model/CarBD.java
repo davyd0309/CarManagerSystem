@@ -55,18 +55,6 @@ public class CarBD {
 
 
 
-    @Setter
-    @Getter
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car",cascade = CascadeType.ALL)
-    private List<ExchangeBD> exchangeList = new ArrayList<>();
-
-    @Setter
-    @Getter
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "car",cascade = CascadeType.ALL)
-    private List<RefuelingBD> refuelingList = new ArrayList<>();
-
     public CarBD() {
     }
 

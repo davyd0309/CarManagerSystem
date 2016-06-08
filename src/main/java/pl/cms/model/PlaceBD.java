@@ -44,18 +44,6 @@ public class PlaceBD  {
     @Getter
     private int point;
 
-    @Setter
-    @Getter
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "place")
-    private List<ExchangeBD> exchangeList = new ArrayList<>();
-
-
-    @Setter
-    @Getter
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "place")
-    private List<RefuelingBD> refuelingList = new ArrayList<>();
 
 
     public PlaceBD() {

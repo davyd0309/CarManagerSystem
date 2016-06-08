@@ -47,13 +47,13 @@ public class ExchangeBD {
     @Setter
     @Getter
     @ManyToOne
-    @JoinColumn(name = "car")
+    @JoinColumn(name = "car",referencedColumnName = "id")
     private CarBD car;
 
     @Setter
     @Getter
     @ManyToOne
-    @JoinColumn(name = "place")
+    @JoinColumn(name = "place",referencedColumnName = "id")
     private PlaceBD place;
 
     public ExchangeBD() {
