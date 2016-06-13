@@ -18,7 +18,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "Samochody")
-public class CarBD {
+public class CarBD{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

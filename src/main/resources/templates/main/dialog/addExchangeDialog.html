@@ -40,7 +40,7 @@
         contentType: 'application/json;charset=UTF-8',
         success: function( data ) {
             $.each(data, function(i, value) {
-                $('#carListSelect').append($('<option></option>`').text(value.carName).attr('value',value));
+                $('#carListSelect').append($('<option></option>`').text(value.carName).attr('value',value.id));
             });
         }
     });
@@ -51,7 +51,7 @@
         contentType: 'application/json;charset=UTF-8',
         success: function( data ) {
             $.each(data, function(i, value) {
-                $('#placeListSelect').append($('<option></option>`').text(value.address +" "+value.name).attr('value',value));
+                $('#placeListSelect').append($('<option></option>`').text(value.address +" "+value.name).attr('value',value.id));
             });
         }
     });

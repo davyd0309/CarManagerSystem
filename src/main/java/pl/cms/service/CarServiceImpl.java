@@ -39,4 +39,11 @@ public class CarServiceImpl implements CarService {
         List all = carDao.findAll();
         return all;
     }
+
+    @Override
+    public CarBD getById(Integer id) {
+        return  carDao.getById(id);
+    }
+
+
 }

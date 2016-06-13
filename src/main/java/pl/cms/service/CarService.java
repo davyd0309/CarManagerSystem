@@ -19,4 +19,5 @@ public interface CarService {
 List<InformationDTO> getInformation();
 void saveOrUpdate(CarBD car);
 List<CarBD>getAll();
+    CarBD getById(Integer id);
 }

@@ -3,10 +3,7 @@ package pl.cms.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.cms.dto.InformationDTO;
 import pl.cms.model.CarBD;
 import pl.cms.service.CarService;
@@ -46,5 +43,12 @@ private CarService carService;
         List<CarBD> carList = carService.getAll();
         HttpStatus httpStatus = carList != null ? HttpStatus.OK : HttpStatus.NOT_FOUND;
         return new ResponseEntity<List<CarBD>>(carList, httpStatus);
+    }
+
+    @RequestMapping(value = "getOneCar/{id}", method = RequestMethod.GET,produces = "application/json")
+    public ResponseEntity<CarBD> getOneCarById(@PathVariable Integer id) {
+        CarBD car = carService.getById(id);
+        HttpStatus httpStatus = car != null ? HttpStatus.OK : HttpStatus.NOT_FOUND;
+        return new ResponseEntity<CarBD>(car, httpStatus);
     }
 }
