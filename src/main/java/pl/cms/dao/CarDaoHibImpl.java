@@ -23,23 +23,31 @@ public class CarDaoHibImpl extends GenericDaoImpl<CarBD, Integer> implements Car
     }
 
     @Override
-    public List<InformationDTO> getInformation() {
-//        return getSession().createCriteria(CarBD.class, "car")
-//                .createAlias("car.exchangeList", "exchangeList")
-//                .createAlias("car.refuelingList", "refuelingList")
-//                .setProjection(Projections.projectionList()
-//                        .add(Projections.property("car.carName"), "carName")
-//                        .add(Projections.property("exchangeList.exchangeDescription"), "exchange")
-//                        .add(Projections.property("refuelingList.refuelingDescription"), "refueling"))
-//                .setResultTransformer(
-//                        Transformers.aliasToBean(InformationDTO.class)).list();
+    public List<InformationDTO> getInformationAboutExchange() {
+        return getSession().createSQLQuery("SELECT " +
+                "s.nazwa_samochodu as carName," +
+                "w.data_wymiany as dateInfo," +
+                "w.opis_wymiany as exchange," +
+                "w.oplata_za_wymiane as price " +
+                "FROM samochody s\n" +
+                "INNER JOIN wymiany w ON s.id=w.car")
+                .addScalar("carName")
+                .addScalar("dateInfo")
+                .addScalar("exchange")
+                .addScalar("price")
+                .setResultTransformer(Transformers.aliasToBean(InformationDTO.class))
+                .list();
 
-return new ArrayList<InformationDTO>();
+    }
+
+    @Override
+    public List<InformationDTO> getInformationAboutRefueling() {
+        return null;
     }
 
     @Override
     public CarBD getById(Integer id) {
         return (CarBD) getSession().createCriteria(CarBD.class)
-                .add(Restrictions.eq("id",id)).uniqueResult();
+                .add(Restrictions.eq("id", id)).uniqueResult();
     }
 }

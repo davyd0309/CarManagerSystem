@@ -24,9 +24,9 @@ private CarService carService;
         this.carService=carService;
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET,produces = "application/json")
+    @RequestMapping(value = "listExchange", method = RequestMethod.GET,produces = "application/json")
     public ResponseEntity<List<InformationDTO>> getInformationToTable() {
-        List<InformationDTO> information = carService.getInformation();
+        List<InformationDTO> information = carService.getInformationAboutExchange();
         HttpStatus httpStatus = information != null ? HttpStatus.OK : HttpStatus.NOT_FOUND;
         return new ResponseEntity<List<InformationDTO>>(information, httpStatus);
     }

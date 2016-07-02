@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-public class HomeController {
+public class StartController {
+
+    public StartController() {
+    }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String homePage() {
         return "index";
     }
+
     @RequestMapping(value = "/tamplate", method = RequestMethod.GET)
     public String tamplatePage() {
         return "tamplate";

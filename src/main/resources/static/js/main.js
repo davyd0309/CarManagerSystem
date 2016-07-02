@@ -54,9 +54,9 @@ var saveRefueling = function () {
         url: 'refueling/addRefueling',
         type: 'POST',
         contentType: "application/json",
-        data: JSON.stringify(exchange),
+        data: JSON.stringify(refueling),
         success: function () {
-            alert("Dodano nową wymianę");
+            alert("Dodano nowe tankowanie");
             $('#refuelingDateInput').val('');
             $('#refuelingPriceInput').val('');
             $('#refuelingDescriptionInput').val('');
@@ -87,7 +87,7 @@ var saveExchange = function () {
         contentType: "application/json",
         data: JSON.stringify(exchange),
         success: function () {
-            alert("Dodano nową wymianę");
+            alert("Dodano nowe wymianę");
             $('#exchangeDateInput').val('');
             $('#exchangePriceInput').val('');
             $('#exchangeDescriptionInput').val('');
@@ -106,11 +106,12 @@ var loadGrid = function () {
 
     $("#grid").igGrid({
         autoGenerateColumns: false,
-        dataSource: 'car/list',
+        dataSource: 'car/listExchange',
         columns: [
             {headerText: "Samochod", key: "carName", dataType: "string", width: "25%"},
-            {headerText: "Wymiany", key: "exchange", dataType: "string", width: "35%"},
-            {headerText: "Tankowania", key: "refueling", dataType: "string", width: "35%"},
+            {headerText: "Data", key: "dateInfo", dataType: "date", width: "35%"},
+            {headerText: "Opis", key: "exchange", dataType: "string", width: "35%"},
+            {headerText: "Cena", key: "price", dataType: "bigdecimal", width: "35%"},
 
         ]
     });

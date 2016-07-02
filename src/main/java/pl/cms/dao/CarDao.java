@@ -14,6 +14,7 @@ import java.util.List;
 
 public interface CarDao extends GenericDao{
 
-List<InformationDTO> getInformation();
+List<InformationDTO> getInformationAboutExchange();
+    List<InformationDTO> getInformationAboutRefueling();
 CarBD getById(Integer id);
 }
