@@ -14,20 +14,6 @@ public class CarManagerSystemApplication {
     public static void main(String[] args) {
         SpringApplication.run(CarManagerSystemApplication.class, args);
     }
-    //mnmnmnmnmnmnmnmmn
-    //jkjkjkjkjkjkjk
-    //kjkjkjkjkjkjkjjk
-    //mnmnmnmnmnmnmnmmn
-    //jkjkjkjkjkjkjk
-    //kjkjkjkjkjkjkjjk
-    //mnmnmnmnmnmnmnmmn
-    //jkjkjkjkjkjkjk
-    //kjkjkjkjkjkjkjjk
-    //mnmnmnmnmnmnmnmmn
-    //jkjkjkjkjkjkjk
-    //kjkjkjkjkjkjkjjk
-    //mnmnmnmnmnmnmnmmn
-    //jkjkjkjkjkjkjk
-    //kjkjkjkjkjkjkjjk
+
 
 }
